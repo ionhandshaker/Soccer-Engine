@@ -1,38 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 10 02:21:40 2016
-
-@author: Nandhakishore
-"""
-"""
-from Tkinter import Tk,Frame,Canvas,BOTH
-class Example(Frame):
-    def __init__(self,parent):
-        Frame.__init__(self,parent)
-        self.parent=parent
-        self.initUI()
-        
-    def initUI(self):
-        self.parent.title("Lines")
-        self.pack(fill=BOTH, expand=1)
-        canvas=Canvas(self)
-        #canvas.create_line(30,25,200,25)
-        canvas.create_rectangle(30,30,550,550,fill='green')
-        canvas.create_oval(140,140,150,150,fill='red')
-        canvas.create_line(30,30,260,260,fill='white')
-        canvas.pack(fill=BOTH, expand=1)
-
-def main():
-  
-    root = Tk()
-    ex = Example(root)
-    root.geometry("650x650")
-    root.mainloop()  
-
-
-if __name__ == '__main__':
-    main()  
-"""
 
 from Tkinter import *
 
@@ -41,13 +6,10 @@ master = Tk("Engine")
 w = Canvas(master, width=670, height=670)
 w.pack()
 
-#w.create_line(0, 0, 200, 100)
-#w.create_line(0, 100, 200, 0, fill="red", dash=(4, 4))
 
 w.create_rectangle(0, 0, 420, 660, fill="green") #main field
 w.create_oval(150,270,270,390,outline='white',width=2) #centre circle
 w.create_line(0,330,420,330,fill='white',width=2) #half line
-#w.create_oval(10,10,20,20,fill='red')
 w.create_line(90,102,330,102,fill='white',width=2) #computer d box horizontal line
 w.create_line(90,0,90,102,fill='white',width=2) #computer d box vertical line 1
 w.create_line(330,0,330,102,fill='white',width=2) #computer d box vertical line 2
@@ -63,13 +25,6 @@ w.create_line(150,620,270,620,fill='white',width=2)
 w.create_line(150,660,150,620,fill='white',width=2)
 w.create_line(270,660,270,620,fill='white',width=2)
 
-
-#w.create_oval(270,270,280,280,fill='red')
-
-
-
-
-#mainloop()
 
 class Team:
     def __init__(self,name):
@@ -109,12 +64,6 @@ player1.add_dribble(54)
 player1.add_passing(67)
 player1.add_defense(90)
 
-"""
-team1=[]
-team1.append(player1)
-team1.append(player2)
-names=[team1[i].name for i in range(0,len(team1))]
-"""
 
 team1=Team("ManUtd")
 team1.add_player(player1)
