@@ -91,6 +91,7 @@ class Player:
         self.dribble=None
         self.passing=None
         self.defense=None
+        self.icon=None
     def add_shoot(self,shoot_value):
         self.shoot=shoot_value
     def add_dribble(self,dribble_value):
@@ -99,6 +100,8 @@ class Player:
         self.passing=passing_value
     def add_defense(self,defense_value):
         self.defense=defense_value
+    def add_icon(self,icon_item):
+        self.add_icon=icon_item
 
 
         
@@ -123,9 +126,21 @@ req=team1.find_player_names()
  
 if(player1.defense-player1.shoot>=30):
     item1=w.create_oval(20,20,30,30,fill='red',tag='player1')
-    
-w.move(item1,70,70)
 
- 
-mainloop()   
+player1.add_icon(item1)
+
+def move_player():
+    x,y=5,5
+    #for i in range(2):
+    #w.move(item1,x,y)
+    if(w.coords(item1)[0]<310 or w.coords(item1)[1]<370):
+        w.move(item1,x,y)
+    print w.coords(item1)
+    master.after(50,move_player)
         
+
+b=Button(master,text='Move',command=move_player)
+
+b.pack() 
+#move_player()
+mainloop()   
